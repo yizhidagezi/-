@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div style="width: 135px;height: 156px;background: url(./images/6_gumby11-initial-sprite.png)0px 0px;" id="div1">
+    </div>
+    <div style="left: 138px; top: 40px; width: 65px; height: 102px; background: url(./images/6_gumby11-initial-sprite.png)-270px 0px;"
+        id="div2">
+    </div>
+    <div style="left: 196px;top: 14px;width: 67px;height: 144px; background: url(./images/6_gumby11-initial-sprite.png)-400px 0px; z-index: 99;"
+        id="div3">
+    </div>
+    <div style="left: 246px; top: -6px;width: 98px;height: 156px;background:url(./images/6_gumby11-initial-sprite.png) -682px 0px;"
+        id="div4">
+    </div>
+    <div style="left: 323px;top: 50px; width: 75px;height: 108px;background: url(./images/6_gumby11-initial-sprite.png)-534px 0px;"
+        id="div5">
+    </div>
+</body>
+
+</html>
+<script src="./jquery-3.6.0.js"></script>
+<script>
+    var aaa = 0
+    var bbb = 0
+    var ccc = 0
+    var ddd = 0
+    var eee = 0
+    $('#div1').mouseover(function () {
+        $('#div1').css({ 'background-position': '-135px 0px' })
+    })
+    $('#div1').mouseout(function () {
+        $('#div1').css({ 'background-position': '0px 0px' })
+    })
+
+    $('#div2').mouseover(function () {
+        $('#div2').css({ 'background-position': '-335px 0px' })
+    })
+    $('#div2').mouseout(function () {
+        $('#div2').css({ 'background-position': '-270px 0px' })
+    })
+
+    $('#div3').mouseover(function () {
+        $('#div3').css({ 'background-position': '-467px 0px' })
+    })
+    $('#div3').mouseout(function () {
+        $('#div3').css({ 'background-position': '-400px 0px' })
+    })
+
+    $('#div4').mouseover(function () {
+        $('#div4').css({ 'background-position': '-780px 0px' })
+    })
+    $('#div4').mouseout(function () {
+        $('#div4').css({ 'background-position': '-682px 0px' })
+    })
+
+    $('#div5').mouseover(function () {
+        $('#div5').css({ 'background-position': '-609px 0px' })
+    })
+    $('#div5').mouseout(function () {
+        $('#div5').css({ 'background-position': '-534px 0px' })
+    })
+
+    // 点击
+    var kq1 = true;
+    $('#div1').click(function () {
+        clearInterval(kq1)
+        $('#div1').off('mouseover')
+        $('#div1').off('out')
+        $('#div1').css({ 'background': 'url(./images/15_gumby11-blockheads.jpg)' })
+
+        var dsq = setInterval(function () {
+            aaa -= 135
+            $('#div1').css({ 'background-position': `${aaa}px 0px` })
+            if (aaa < -8000) {
+                aaa = 0
+                clearInterval(dsq)
+                $('#div1').css({ 'background-position': '0px 0px' })
+            }
+        }, 100)
+    })
+
+
+
+    $('#div2').click(function () {
+        $('#div2').off('mouseover')
+        $('#div2').off('out')
+        $('#div2').css({ 'background': 'url(./images/16_gumby11-prickle.jpg)' })
+
+        var dsq = setInterval(function () {
+            bbb -= 65
+            $('#div2').css({ 'background-position': `${bbb}px 0px` })
+            if (bbb < -3300) {
+                bbb = 0
+                clearInterval(dsq)
+                $('#div2').css({ 'background-position': '0px 0px' })
+            }
+        }, 100)
+    })
+
+    $('#div3').click(function () {
+        $('#div3').off('mouseover')
+        $('#div3').off('out')
+        $('#div3').css({ 'background': 'url(./images/17_gumby11-goo.png)' })
+
+        var dsq = setInterval(function () {
+            ccc -= 67
+            $('#div3').css({ 'background-position': `${ccc}px 0px` })
+            if (ccc < -5235) {
+                ccc = 0
+                clearInterval(dsq)
+                $('#div3').css({ 'background-position': '0px 0px' })
+            }
+        }, 100)
+    })
+
+    $('#div4').click(function () {
+        $('#div4').off('mouseover')
+        $('#div4').off('out')
+        $('#div4').css({ 'background': 'url(./images/10_gumby11-gumby.jpg)' })
+
+        var dsq = setInterval(function () {
+            ddd -= 98
+            $('#div4').css({ 'background-position': `${ddd}px 0px` })
+            if (ddd < -14701) {
+                ddd = 0
+                clearInterval(dsq)
+                $('#div4').css({ 'background-position': '0px 0px' })
+                $('#div4').open('mouseover')
+                $('#div4').open('out')
+            }
+        }, 100)
+    })
+
+
+    $('#div5').click(function () {
+        $('#div5').off('mouseover')
+        $('#div5').off('out')
+        $('#div5').css({ 'background': 'url(./images/18_gumby11-pokey.png)' })
+
+        var dsq = setInterval(function () {
+            eee -= 75
+            $('#div5').css({ 'background-position': `${eee}px 0px` })
+            if (eee < -5120) {
+                eee = 0
+                clearInterval(dsq)
+                $('#div5').css({ 'background-position': '0px 0px' })
+            }
+        }, 100)
+    })
+</script>

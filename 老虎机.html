@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .zong {
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .num_img1 {
+        width: 124px;
+        height: 1298px;
+        margin-bottom: 4px;
+        background: url(./images/num.png);
+        position: relative;
+        top: -441px;
+    }
+
+    .num_img2 {
+        width: 124px;
+        height: 1298px;
+        margin-bottom: 4px;
+        background: url(./images/num.png);
+        position: relative;
+        top: -801px;
+
+    }
+
+    .num_img3 {
+        width: 124px;
+        height: 1298px;
+        margin-bottom: 4px;
+        background: url(./images/num.png);
+        position: relative;
+        top: -100px;
+    }
+
+    .num1 {
+        position: absolute;
+        left: 248px;
+        top: 171px;
+        width: 124px;
+        height: 198px;
+        overflow: hidden;
+    }
+
+    .num2 {
+        position: absolute;
+        left: 399px;
+        top: 171px;
+        width: 124px;
+        height: 198px;
+        overflow: hidden;
+    }
+
+    .num3 {
+        position: absolute;
+        left: 551px;
+        top: 171px;
+        width: 124px;
+        height: 198px;
+        overflow: hidden;
+    }
+
+    button {
+        position: relative;
+        top: 420px;
+        left: 41%;
+        width: 240px;
+        height: 50px;
+    }
+</style>
+
+<body>
+    <div class="zong">
+        <div class="num1">
+            <div class="num_img1"></div>
+        </div>
+        <div class="num2">
+            <div class="num_img2"></div>
+        </div>
+        <div class="num3">
+            <div class="num_img3"></div>
+        </div>
+    </div>
+    <button>开始摇</button>
+</body>
+
+</html>
+<script src="./jquery-3.6.0.js"></script>
+<script>
+    var aaa
+    var bbb
+    var ccc
+    $('button').click(function () {
+        var a1 = setInterval(function () {
+            $('.num_img1').css({ 'background-position': `0px ${Math.floor(Math.random() * 1299)}px` })
+            $('.num_img2').css({ 'background-position': `0px ${Math.floor(Math.random() * 1299)}px` })
+            $('.num_img3').css({ 'background-position': `0px ${Math.floor(Math.random() * 1299)}px` })
+            a = Math.floor(Math.random() * 31) + Math.floor(Math.random() * 31) + Math.floor(Math.random() * 31) + Math.floor(Math.random() * 31)
+            console.log(a);
+            if (a > 100) {
+                clearTimeout(a1)
+            }
+        }, 50)
+    })
+</script>
